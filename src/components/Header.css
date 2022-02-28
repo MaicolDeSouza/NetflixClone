@@ -1,0 +1,36 @@
+header{
+    position: fixed; /* Deixa o header fixado no topo, pemitindo que a capa do filme passe por baixo */
+    z-index: 999;   /* Garante que o header vai ficar por cima da capa do filme */
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between; /* Separa o logo e o icone do usuario para os extremos */
+    align-items: center; /* Alinha o logo e o icone no centro da area do header */
+    padding: 0px 30px;  /* Afasta os icones dos cantos na horizontal */
+    background: transparent;
+    transition: all ease 0.5s; /* Suavizar a transição entre fundo preto e o transparente */
+}
+
+header.black{
+    background-color: #141414;
+    opacity: 0.9;
+}
+
+.header--logo{ 
+    height: 30px; /* Define o tamanho para a area do logo */
+}
+
+.header--logo img{
+    height: 100%; /* Define o tamanho da imagem sendo toda a area do logo */
+}
+
+.header--user{
+    height: 35px; /* Define o tamanho para a area do logo--user */
+}
+
+.header--user img{
+    height: 100%; /* Define o tamanho da imagem sendo toda a area do logo--user */
+    border-radius: 3px;
+}

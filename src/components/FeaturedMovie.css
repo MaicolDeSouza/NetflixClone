@@ -1,0 +1,119 @@
+.featured{
+    height: 100vh; /* Define o tamanho da capa como toda a tela */
+    background-size: cover; /* Comando para que a imagem ocupe toda a area */
+    background-position: center; /* Mantem a imagem centralizada */
+}
+
+/* Fazer o efeito gradiente na vertical*/
+.featured--vertical{ 
+    width: inherit;     /* Herda a area da imagem para aplicar o gradiente */
+    height: inherit; /* Herda a area da imagem para aplicar o gradiente */
+    background: linear-gradient(to top, #111 10% , transparent 90%); /* Gradiente inicia de baixo na cor preta e termina em 10% da area */
+}
+
+/* Fazer o efeito gradiente na horizontal*/
+.featured--horizontal{ 
+    width: inherit;     /* Herda a area da imagem para aplicar o gradiente */
+    height: inherit; /* Herda a area da imagem para aplicar o gradiente */
+    background: linear-gradient(to right, #111 30% , transparent 70%); /* Gradiente inicia da esq. na cor preta e termina em 30% da area */
+    display: flex; /* Torna flex para poder usar o justify content ao centro */
+    flex-direction: column; 
+    justify-content: center; /* Alinha o conteudo ao centro na horizontal */
+    padding-left: 30px; /* Cria um espaço na esquerda */
+    padding-bottom: 150px; /* desloca o conteudo 150px para cima para que o inicio das lista nao passe por cima das info do filme de capa  */
+    padding-top: 70px; /* Para deixar espaço para o cabeçalho no topo */
+}
+
+.featured--name{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.featured--info{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.featured--points, 
+.featured--year, 
+.featured--seasons{
+    display: inline-block; /* Deixa os itens um ao lado do outro e mantendo a propriedade de tamanho */
+    margin-right: 15px;
+}
+
+.featured--points {
+    color: #46d369;
+}
+
+.featured--description{
+    font-size: 20px;
+    color: #999;
+    margin-top: 15px;
+    max-width: 40%; /* Define que o texto usara 40% do tamanho da tela, desta forma nao passar o texto por cima da capa*/
+}
+
+.featured--buttons{
+    margin-top: 15px;
+}
+
+.featured--watchbutton,
+.featured--mylistbutton{
+    display: inline-block; /* Deixa os itens um ao lado do outro e mantendo a propriedade de tamanho */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px; /* Padding de 12px cima e baixo / Padding de 25px esq e dir */
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none; /* Como é um link, tira o aspecto de link */
+    opacity: 1; /* Inicia com opacidade normal */
+    transition: all ease 0.2s; /* Faz o efeito de trocar as cores de forma suave*/
+}
+
+.featured--watchbutton:hover,
+.featured--mylistbutton:hover{
+    opacity: 0.7; /* Quando passar o mouse muda opacidade para 70% */
+}
+
+.featured--watchbutton{
+    background-color: #FFF;
+    color: #000;
+}
+
+.featured--mylistbutton{
+    background-color: #333;
+    color: #FFF;
+}
+
+.featured--genres{
+    margin-top: 15px;
+    font-size: 18px;
+    color: #999;
+}
+
+/* Aplica o css abaixo quando celular */
+@media (max-width:760px){
+    .featured{
+        height: 90vh; /* Define o tamanho da capa como toda a tela */
+    }
+    .featured--name{
+        font-size: 40px;
+    }
+    .featured--info{
+        font-size: 16px;
+    }
+    .featured--description{
+        font-size: 14px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+    .featured--mylistbutton,
+    .featured--watchbutton{
+        font-size: 16px;
+    }
+    .featured--genres{
+        font-size: 14px;
+    }
+    
+  
+    }

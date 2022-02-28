@@ -1,0 +1,69 @@
+.movieRow{
+    margin-bottom: 30px;
+}
+
+.movieRow h2{
+    margin: 0px 0px 0px 30px; /* Criar ma imagem no titulo das listas*/
+}
+
+.movieRow--listarea{
+    overflow-x: hidden; /* Tudo que passar da tela na horizontal(x) sera cortado*/
+    padding-left: 30px; /* criar um espa;o na esquerda de cada lista */
+}
+
+.movieRow--item{
+    display: inline-block; /* Deixa as imagens uma ao lado da outra*/
+    width: 150px;           /* Cada item tera uma largura de 150px */   
+    cursor: pointer;
+}
+
+.movieRow--item img {
+    width: 100%;    /* Cada imagem tera uma largura de 100% referente ao item, que no caso tem largura de 150px*/ 
+    transform: scale(0.9); /* Diminui a escala para 90% para ser possivel fazer o efeito do hover logo abaixo */
+    transition: all ease 0.2s; /* Faz o efeito de trocar as escalas de forma suave*/
+}
+
+.movieRow--item img:hover{
+    transform: scale(1); /* Quando passado o mouse sobre a imagem volta para a escala original da imagem */
+}
+
+.movieRow--left,
+.movieRow--right{
+    position: absolute; /* Para nao ocupar espaço do fundo */
+    width: 40px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6); /* Deixa um fundo preto bem fraco*/
+    z-index: 99; /* Para ficar acima dos filmes porem abaixo do header */
+    display: flex; /* Para poder usar justify e align abaixo */
+    justify-content: center; /* Alinha ao centro na vertical */
+    align-items: center; /* Alinha ao centro na horizontal */
+    overflow: hidden; /* Caso a flecha passe o tamanho da pagina, ele esconde. Nao deixando criar a barra de rolagem na horizontal */
+    cursor: pointer;
+    opacity: 0; /* Para mostrar a flecha apenas quando passar o mouse sobre a lista*/
+    transition: all ease 0.2s;
+}
+
+.movieRow--left{
+    left: 0px;
+}
+
+.movieRow--right{
+    right: 0px;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right{
+    opacity: 1; /* Para mostrar a flecha apenas quando passar o mouse sobre a lista*/
+}
+
+.movieRow--list{
+    transition: all ease 0.5s; /* Tornar a troca de filme mais suave quando clicado nas flechas */ 
+}
+
+/* Aplica o css abaixo quando celular */
+@media (max-width:760px){
+    .movieRow--left,
+    .movieRow--right{
+        opacity: 1;
+    }
+}
